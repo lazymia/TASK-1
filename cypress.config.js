@@ -9,6 +9,8 @@ module.exports = defineConfig({
 
     },
     chromeWebSecurity: false,
+   "watchForFileChanges" : false
+,
     failOnStatusCode: false
   },
 });
