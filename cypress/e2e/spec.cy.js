@@ -9,6 +9,7 @@ context('Users are able to search for an item using the search bar', () =>{
     cy.url().and('eq','http://automationpractice.com/index.php?controller=search&orderby=position&orderway=desc&search_query=dress&submit_search=') //asserts that the url has changed
     cy.get('.page-heading').should("exist") //confirms that the search has been filtered
     cy.get('.heading-counter').contains("7 results have been found.") //shows result of filtered search
+    cy.get('.last-item-of-tablet-line').contains('dress')
   })
 })
  context('Users are able to filter search results under Women category by Color and Category', () =>{
@@ -30,7 +31,6 @@ context('Users are able to view the details of any clothing item from the POPULA
       .within(()=>{
           cy.get('.layer_cart_product > h2').should('exist')
           cy.get('h2 > .ajax_cart_product_txt_s').should('exist')
-          cy.get('[title="View my shopping cart"]').trigger({force:true})
     })
     
   })
